@@ -2,33 +2,28 @@ import requests
 from colorama import Fore
 from bs4 import BeautifulSoup
 
-
 tenseoptions = '1 = yo\n2 = tu\n3 = el/ella/Ud.\n4 = nosotros\n5 = ellos/ellas/Uds.'
 print(Fore.GREEN + tenseoptions)
 
-print("Give us subject and verb")
-print("Ex: tu intentar")
-
+print("Type number and verb, EX: '4 jugar'\n\n-----------------------------------\n")
 
 
 def lookforSubject(subject):
     if int(subject) == 1:
-        yo = soup.find('div',{'class': '_2xfncFkp'})[34].text
+        yo = soup.find_all('div',{'class': '_2xfncFkp'})[32].text
         print(yo)
     elif int(subject) == 2:
-        yo = soup.find('div',{'class': '_2xfncFkp'})[38].text
+        yo = soup.find_all('div',{'class': '_2xfncFkp'})[36].text
         print(yo)
     elif int(subject) == 3:
-        pass
+        yo = soup.find_all('div',{'class': '_2xfncFkp'})[40].text
+        print(yo)
     elif int(subject) == 4:
-        pass
+        yo = soup.find_all('div',{'class': '_2xfncFkp'})[44].text
+        print(yo)
     elif int(subject) == 5:
-        pass
-
-
-
-
-
+        yo = soup.find_all('div',{'class': '_2xfncFkp'})[52].text
+        print(yo)
 
 while True:
     userinp = input("Enter: ")
